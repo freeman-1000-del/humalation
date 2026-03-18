@@ -1,18 +1,10 @@
 {
   "version": 2,
-  "routes": [
-    { "src": "/api/translate", "dest": "/translate.js" },
-    { "src": "/api/create-checkout", "dest": "/create-checkout.js" },
-    { "src": "/api/webhook", "dest": "/webhook.js" },
-    { "src": "/api/auth", "dest": "/auth.js" },
-    { "src": "/terms", "dest": "/public/terms.html" },
-    { "src": "/privacy", "dest": "/public/privacy.html" },
-    { "src": "/refund", "dest": "/public/refund.html" },
-    { "src": "/success", "dest": "/public/success.html" },
-    { "src": "/(.*)", "dest": "/public/index.html" }
-  ],
-  "functions": {
-    "translate.js": { "memory": 512, "maxDuration": 60 },
-    "webhook.js": { "memory": 256, "maxDuration": 30 }
-  }
+  "rewrites": [
+    { "source": "/terms", "destination": "/public/terms.html" },
+    { "source": "/privacy", "destination": "/public/privacy.html" },
+    { "source": "/refund", "destination": "/public/refund.html" },
+    { "source": "/success", "destination": "/public/success.html" },
+    { "source": "/((?!api/).*)", "destination": "/public/index.html" }
+  ]
 }
