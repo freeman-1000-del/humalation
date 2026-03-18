@@ -1,10 +1,10 @@
 {
   "version": 2,
   "routes": [
-    { "src": "/api/webhook", "dest": "/api/webhook.js" },
-    { "src": "/api/create-checkout", "dest": "/api/create-checkout.js" },
-    { "src": "/api/auth", "dest": "/api/auth.js" },
-    { "src": "/api/translate", "dest": "/api/translate.js" },
+    { "src": "/api/translate", "dest": "/translate.js" },
+    { "src": "/api/create-checkout", "dest": "/create-checkout.js" },
+    { "src": "/api/webhook", "dest": "/webhook.js" },
+    { "src": "/api/auth", "dest": "/auth.js" },
     { "src": "/terms", "dest": "/public/terms.html" },
     { "src": "/privacy", "dest": "/public/privacy.html" },
     { "src": "/refund", "dest": "/public/refund.html" },
@@ -12,7 +12,7 @@
     { "src": "/(.*)", "dest": "/public/index.html" }
   ],
   "functions": {
-    "api/webhook.js": { "memory": 256, "maxDuration": 30 },
-    "api/translate.js": { "memory": 512, "maxDuration": 60 }
+    "translate.js": { "memory": 512, "maxDuration": 60 },
+    "webhook.js": { "memory": 256, "maxDuration": 30 }
   }
 }
