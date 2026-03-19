@@ -14,7 +14,7 @@ export default async function handler(req, res) {
 const { title, description, keywords, languages } = body; : (req.body || {});
 const { title, description, keywords, languages } = body;
       if (!title || !languages || !languages.length) {
-    return res.status(400).json({ error: 'title과 languages는 필수입니다.' });
+    return res.status(400).json({ error: 'title과 languages는 필수입니다.', received: JSON.stringify(body) });
   }
 
   const langList = languages.map(l => `${l.code}:${l.name}`).join(', ');
